@@ -1,3 +1,7 @@
+import { Flex } from '@chakra-ui/react';
+import CheckableAccordionMenu from 'components/checkable-accordion-menu';
+import testData from 'infrastructure/test-data';
+
 function App() {
   return (
     <main>
@@ -24,7 +28,18 @@ function App() {
         </p>
         <div className="absolute top-12 right-12 opacity-10 lg:opacity-50"></div>
       </header>
-      <section className="max-w-screen-lg xl:max-w-screen-xl mx-auto"></section>
+      <Flex w="full" flex={1} h={240} bgColor={'white'}>
+        {testData.map((t) => {
+          return (
+            <CheckableAccordionMenu
+              data={t}
+              key={t.key}
+              onChange={() => {}}
+            ></CheckableAccordionMenu>
+          );
+        })}
+      </Flex>
+
       <footer className="pb-16 max-w-screen-lg xl:max-w-screen-xl mx-auto text-center sm:text-right text-gray-400 font-bold">
         <a href="https://github.com/jvidalv">
           Josep Vidal @ {new Date().getFullYear()}
