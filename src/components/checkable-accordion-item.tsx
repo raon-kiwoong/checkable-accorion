@@ -1,10 +1,10 @@
-import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
-import CheckableAccordionItemType from 'src/types/checkable-accordion-item-type';
-import CheckableAccordion from './checkable-accordion';
-import { Box } from '@chakra-ui/react';
-import CheckableAccordionLeafItem from './checkable-accordion-leaf-item';
-import CheckableAccordionItemHandleType from 'src/types/checkable-accordion-item-handle-type';
-import CheckableAccordionPropsType from 'src/types/checkable-accordion-props-type';
+import React, { useEffect, useImperativeHandle, useRef, useState } from "react";
+import CheckableAccordionItemType from "src/types/checkable-accordion-item-type";
+import CheckableAccordion from "./checkable-accordion";
+import { Box } from "@chakra-ui/react";
+import CheckableAccordionLeafItem from "./checkable-accordion-leaf-item";
+import CheckableAccordionItemHandleType from "src/types/checkable-accordion-item-handle-type";
+import CheckableAccordionPropsType from "src/types/checkable-accordion-props-type";
 
 const CheckableAccordionItem = React.forwardRef<
   CheckableAccordionItemHandleType,
@@ -74,7 +74,7 @@ const CheckableAccordionItem = React.forwardRef<
     >
       {data.children!.map((c, i) => {
         return (
-          <Box key={c.key} w={'full'}>
+          <Box key={c.key} w={"full"}>
             {c.children && c.children.length > 1 ? (
               <CheckableAccordionItem
                 ref={(r) => {

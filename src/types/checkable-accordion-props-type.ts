@@ -1,4 +1,4 @@
-import CheckableAccordionItemType from './checkable-accordion-item-type';
+import CheckableAccordionItemType from "./checkable-accordion-item-type";
 
 type CheckableAccordionPropsType = {
   data: CheckableAccordionItemType;

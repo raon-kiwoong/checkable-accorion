@@ -1,12 +1,12 @@
 module.exports = {
-  extends: ['@commitlint/config-conventional'],
+  extends: ["@commitlint/config-conventional"],
   rules: {
-    'type-enum': [
+    "type-enum": [
       2,
-      'always',
-      ['feat', 'remove', 'style', 'fix', 'chore', 'document'],
+      "always",
+      ["feat", "remove", "style", "fix", "chore", "document"],
     ],
-    'raondata-rule': [2, 'always'],
+    "raondata-rule": [2, "always"],
   },
   plugins: [
     {
@@ -21,15 +21,15 @@ module.exports = {
          * @returns
          */
 
-        'raondata-rule': (data) => {
+        "raondata-rule": (data) => {
           if (data.references && data.references.length > 0) {
             const refs = data.references;
-            let issue_tags = '';
+            let issue_tags = "";
             refs.map((ref, i) => {
               const issue_tag = `${
-                ref.action && i === 0 ? `${ref.action} ` : ''
+                ref.action && i === 0 ? `${ref.action} ` : ""
               }${ref.prefix}${ref.issue}`;
-              issue_tags += (i === 0 ? '' : ', ') + issue_tag;
+              issue_tags += (i === 0 ? "" : ", ") + issue_tag;
             });
             return [
               data.subject.endsWith(issue_tags),

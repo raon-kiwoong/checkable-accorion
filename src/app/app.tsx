@@ -1,6 +1,6 @@
-import { Flex } from '@chakra-ui/react';
-import CheckableAccordionMenu from 'components/checkable-accordion-menu';
-import testData from 'infrastructure/test-data';
+import { Flex } from "@chakra-ui/react";
+import CheckableAccordionMenu from "components/checkable-accordion-menu";
+import testData from "infrastructure/test-data";
 
 function App() {
   return (
@@ -13,14 +13,14 @@ function App() {
           React + TypeScript + Tailwind
         </h1>
         <p className="max-w-screen-lg text-lg sm:text-xl  text-gray-300 font-medium mb-10 sm:mb-11">
-          Bootstrap your web projects faster than ever. Comes with:{' '}
+          Bootstrap your web projects faster than ever. Comes with:{" "}
           <code className="font-mono text-blue-500 font-bold">CSS-Modules</code>
-          , <code className="font-mono text-blue-500 font-bold">Jest</code>,{' '}
-          <code className="font-mono text-blue-500 font-bold">Husky</code>,{' '}
+          , <code className="font-mono text-blue-500 font-bold">Jest</code>,{" "}
+          <code className="font-mono text-blue-500 font-bold">Husky</code>,{" "}
           <code className="font-mono text-blue-500 font-bold">Commit-lint</code>
-          , <code className="font-mono text-blue-500 font-bold">ESLint</code>,{' '}
-          <code className="font-mono text-blue-500 font-bold">Prettier</code>{' '}
-          and{' '}
+          , <code className="font-mono text-blue-500 font-bold">ESLint</code>,{" "}
+          <code className="font-mono text-blue-500 font-bold">Prettier</code>{" "}
+          and{" "}
           <code className="font-mono text-blue-500 font-bold">
             Atomic organization for components
           </code>
@@ -28,7 +28,7 @@ function App() {
         </p>
         <div className="absolute top-12 right-12 opacity-10 lg:opacity-50"></div>
       </header>
-      <Flex w="full" flex={1} h={240} bgColor={'white'}>
+      <Flex w="full" flex={1} h={240} bgColor={"white"}>
         {testData.map((t) => {
           return (
             <CheckableAccordionMenu
