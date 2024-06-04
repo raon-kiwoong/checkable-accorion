@@ -1,6 +1,6 @@
 {
   "name": "checkable-accordion",
-  "version": "1.0.63",
+  "version": "1.0.64",
   "description": "",
   "homepage": "https://github.com/jvidalv/vital#readme",
   "repository": "https://github.com/raon-kiwoong/checkable-accorion.git",
@@ -75,6 +75,6 @@
     "vite-preset-react": "2.3.0",
     "vitest": "^0.34.5"
   },
-  "main": "index.js",
+  "main": "index.d.ts",
   "private": false
 }
