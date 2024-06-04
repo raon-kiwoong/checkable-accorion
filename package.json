@@ -1,6 +1,6 @@
 {
   "name": "checkable-accordion",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "homepage": "https://github.com/jvidalv/vital#readme",
   "repository": "https://github.com/raon-kiwoong/checkable-accorion.git",
@@ -30,8 +30,7 @@
     "build": "tsc && vite build",
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "postinstall": "husky install"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
