@@ -11,16 +11,10 @@
   },
   "keywords": [
     "react",
-    "vite",
     "typescript",
-    "vitest",
-    "tailwind",
-    "template",
-    "starter",
-    "eslint",
-    "prettier",
-    "husky",
-    "commit-lint"
+    "checkbox",
+    "accordion",
+    "nested"
   ],
   "browserslist": [
     ">0.2%",
