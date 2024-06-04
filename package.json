@@ -1,6 +1,6 @@
 {
   "name": "@raondata/react-checkable-accordion",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "homepage": "https://github.com/raon-kiwoong/checkable-accorion.git",
   "repository": "https://github.com/raon-kiwoong/checkable-accorion.git",
@@ -75,7 +75,8 @@
     "vite-preset-react": "2.3.0",
     "vitest": "^0.34.5"
   },
-  "module": "dist/index.d.ts",
-  "main": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
   "private": false
 }
