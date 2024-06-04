@@ -1,16 +1,13 @@
 {
-  "name": "vital",
-  "version": "1.0.0",
-  "description": "Starter template for Vite with React (TypeScript). Supports Tailwind. Vitest and @react/testing-library configured and ready to go. Also ESLint, Prettier, Husky, Commit-lint and Atomic Design for components.",
+  "name": "checkable-accordion",
+  "version": "1.0.2",
+  "description": "",
   "homepage": "https://github.com/jvidalv/vital#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jvidalv/vital.git"
-  },
-  "author": "Josep Vidal <josepvidalvidal@gmail.com>",
+  "repository": "https://github.com/raon-kiwoong/checkable-accorion.git",
+  "author": "raondata",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jvidalv/vital/issues"
+    "url": "https://github.com/raon-kiwoong/checkable-accorion.git/issue"
   },
   "keywords": [
     "react",
@@ -79,5 +76,7 @@
     "vite": "^4.4.8",
     "vite-preset-react": "2.3.0",
     "vitest": "^0.34.5"
-  }
+  },
+  "main": "index.js",
+  "private": false
 }
