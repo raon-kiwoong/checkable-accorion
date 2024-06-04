@@ -1,6 +1,6 @@
 {
   "name": "@raondata/react-checkable-accordion",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "homepage": "https://github.com/raon-kiwoong/checkable-accorion.git",
   "repository": "https://github.com/raon-kiwoong/checkable-accorion.git",
@@ -44,9 +44,7 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "files": [
-    "src/components",
-    "src/types",
-    "src/index.ts"
+    "dist"
   ],
   "devDependencies": {
     "@commitlint/cli": "17.4.2",
