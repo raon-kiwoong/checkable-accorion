@@ -1,6 +1,6 @@
 {
-  "name": "checkable-accordion",
-  "version": "1.0.64",
+  "name": "react-checkable-accordion",
+  "version": "1.0.2",
   "description": "",
   "homepage": "https://github.com/jvidalv/vital#readme",
   "repository": "https://github.com/raon-kiwoong/checkable-accorion.git",
@@ -30,6 +30,7 @@
     "build": "tsc && vite build",
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "prepare": "rm -rf dist && tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -75,6 +76,7 @@
     "vite-preset-react": "2.3.0",
     "vitest": "^0.34.5"
   },
-  "main": "index.d.ts",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
   "private": false
 }
