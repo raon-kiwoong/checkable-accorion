@@ -1,6 +1,6 @@
 {
   "name": "checkable-accordion",
-  "version": "1.0.5",
+  "version": "1.0.61",
   "description": "",
   "homepage": "https://github.com/jvidalv/vital#readme",
   "repository": "https://github.com/raon-kiwoong/checkable-accorion.git",
@@ -41,6 +41,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
+  "files": [
+    "src/components",
+    "src/types"
+  ],
   "devDependencies": {
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "^19.2.2",
