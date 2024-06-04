@@ -5,15 +5,15 @@ import {
   AccordionPanel,
   Checkbox,
   Flex,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import React, {
   ReactNode,
   useEffect,
   useImperativeHandle,
   useRef,
   useState,
-} from "react";
-import CheckableAccordionItemType from "src/types/checkable-accordion-item-type";
+} from 'react';
+import CheckableAccordionItemType from 'types/checkable-accordion-item-type';
 
 type CheckableAccordionHandleType = {
   checked: (value: boolean) => void;
@@ -56,12 +56,12 @@ const CheckableAccordion = React.forwardRef<
   return (
     <Accordion
       allowMultiple
-      w={"100%"}
+      w={'100%'}
       pr={2}
       defaultIndex={data.children?.map((_, i) => i)}
     >
       <AccordionItem key={data.key}>
-        <Flex flexDir={"row"} w="full">
+        <Flex flexDir={'row'} w="full">
           <Checkbox
             ref={ref}
             borderColor={checkboxBorderColor}
@@ -71,7 +71,7 @@ const CheckableAccordion = React.forwardRef<
               setDefaultChecked(!defaultChecked);
             }}
             isChecked={defaultChecked}
-            float={"left"}
+            float={'left'}
             mr={4}
           ></Checkbox>
           <AccordionButton display="flex" flex={1} px={0}>

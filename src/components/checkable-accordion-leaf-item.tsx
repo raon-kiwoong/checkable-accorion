@@ -1,7 +1,7 @@
-import React, { useEffect, useImperativeHandle, useRef, useState } from "react";
-import CheckableAccordionItemType from "src/types/checkable-accordion-item-type";
-import { Checkbox, Flex, Text } from "@chakra-ui/react";
-import CheckableAccordionItemHandleType from "src/types/checkable-accordion-item-handle-type";
+import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import CheckableAccordionItemType from 'types/checkable-accordion-item-type';
+import { Checkbox, Flex, Text } from '@chakra-ui/react';
+import CheckableAccordionItemHandleType from 'types/checkable-accordion-item-handle-type';
 
 const CheckableAccordionLeafItem = React.forwardRef<
   CheckableAccordionItemHandleType,
@@ -32,7 +32,7 @@ const CheckableAccordionLeafItem = React.forwardRef<
       <Checkbox
         isChecked={isChecked}
         mr={4}
-        borderColor={"gray.400"}
+        borderColor={'gray.400'}
         onChange={() => {
           checkedRef.current = true;
           setChecked(!isChecked);

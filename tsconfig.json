@@ -10,20 +10,22 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
-
+    "declaration": true,
+    "emitDeclarationOnly": true,
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
+    "typeRoots": ["./src/types"],
     "paths": {
       "app/*": ["src/app/*"],
       "components/*": ["src/components/*"],
       "hooks/*": ["src/hooks/*"],
-      "infrastructure/*": ["src/infrastructure/*"]
+      "infrastructure/*": ["src/infrastructure/*"],
+      "types/*": ["src/types/*"]
     }
   },
   "include": ["./src"],
