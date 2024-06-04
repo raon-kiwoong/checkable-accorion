@@ -1,6 +1,6 @@
 {
   "name": "@raondata/react-checkable-accordion",
-  "version": "0.0.14",
+  "version": "0.1.1",
   "description": "",
   "homepage": "https://github.com/raon-kiwoong/checkable-accorion.git",
   "repository": "https://github.com/raon-kiwoong/checkable-accorion.git",
@@ -47,6 +47,7 @@
     "dist/*"
   ],
   "devDependencies": {
+    "@chakra-ui/react": "^2.8.2",
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "^19.2.2",
     "@tailwindcss/forms": "0.5.3",
