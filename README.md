@@ -4,6 +4,6 @@
 
 If you want an accordion menu that can be checked, this package will be useful.
 
-## condition
+## environment
  
 This package works normally in an environment where chakra-ui is installed. 
