@@ -70,3 +70,17 @@ OnChange has two parameters, the first is a list of deselected items, and the se
 ```
 onChange  = (removal, changed) => void;
 ```
+
+#### hidden
+
+If you want hide some Items. use this properties. Just put the key list in array.
+
+```
+<CheckableAccordionMenu
+ data={data}
+ onChange={(removal, changed) => { ... }}
+ hidden=["001", "002-1", "004", ...]
+>
+```
+
+When Upper Item's key is included, children items are automatically hidden.
