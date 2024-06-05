@@ -1,7 +1,14 @@
-import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 import CheckableAccordionItemType from 'types/checkable-accordion-item-type';
 import { Checkbox, Flex, Text } from '@chakra-ui/react';
 import CheckableAccordionItemHandleType from 'types/checkable-accordion-item-handle-type';
+import { HiddenContext } from 'contexts/hidden-context/hidden-context';
 
 const CheckableAccordionLeafItem = React.forwardRef<
   CheckableAccordionItemHandleType,
@@ -13,7 +20,9 @@ const CheckableAccordionLeafItem = React.forwardRef<
 >(({ data, onCheck }, parentRef) => {
   const checkedRef = useRef<boolean>(false);
   const [isChecked, setChecked] = useState<boolean>(false);
+  const { hiddenMap } = useContext(HiddenContext);
 
+  console.log('#', hiddenMap);
   useImperativeHandle(parentRef, () => ({
     setChecked: (newVal: boolean) => {
       setChecked(newVal);
@@ -26,6 +35,8 @@ const CheckableAccordionLeafItem = React.forwardRef<
   useEffect(() => {
     onCheck(isChecked);
   }, [isChecked]);
+
+  if (hiddenMap[data.key!]) return <></>;
 
   return (
     <Flex flexDir="row" flex={1}>

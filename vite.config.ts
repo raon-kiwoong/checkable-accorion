@@ -34,6 +34,7 @@ export default defineConfig({
       hooks: resolve(__dirname, 'src', 'hooks'),
       infrastructure: resolve(__dirname, 'src', 'infrastructure'),
       types: resolve(__dirname, 'src', 'types'),
+      contexts: resolve(__dirname, 'src', 'contexts'),
     },
   },
 });

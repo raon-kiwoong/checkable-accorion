@@ -25,7 +25,8 @@
       "components/*": ["src/components/*"],
       "hooks/*": ["src/hooks/*"],
       "infrastructure/*": ["src/infrastructure/*"],
-      "types/*": ["src/types/*"]
+      "types/*": ["src/types/*"],
+      "contexts/*": ["src/contexts/*"]
     }
   },
   "include": ["./src"],

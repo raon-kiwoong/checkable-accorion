@@ -19,13 +19,13 @@ If you want an accordion menu can be checked, this package will be useful.
 ## install
 
 ```
-yarn add @raondata/checkable-accordion-react
+yarn add @raondata/react-checkable-accordion
 ```
 
 or
 
 ```
-npm install @raondata/checkable-accordion-react
+npm install @raondata/react-checkable-accordion
 ```
 
 ## usage

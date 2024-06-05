@@ -1,4 +1,10 @@
-import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 import CheckableAccordionItemType from 'types/checkable-accordion-item-type';
 import CheckableAccordion from './checkable-accordion';
 import { Box } from '@chakra-ui/react';
@@ -6,6 +12,7 @@ import CheckableAccordionLeafItem from './checkable-accordion-leaf-item';
 import CheckableAccordionItemHandleType from 'types/checkable-accordion-item-handle-type';
 import CheckableAccordionPropsType from 'types/checkable-accordion-props-type';
 import CheckableAccordionHandleType from 'types/checkable-accordion-handle-type';
+import { HiddenContext } from 'contexts/hidden-context/hidden-context';
 
 const CheckableAccordionItem = React.forwardRef<
   CheckableAccordionItemHandleType,
@@ -14,6 +21,8 @@ const CheckableAccordionItem = React.forwardRef<
   const [isChecked, setChecked] = useState<boolean>(false);
   const checkAccordionRef = useRef<CheckableAccordionHandleType>(null);
   const checkListRef = useRef<CheckableAccordionItemHandleType[]>([]);
+
+  const { hiddenMap } = useContext(HiddenContext);
 
   useImperativeHandle(parentRef, () => ({
     setChecked: (newVal: boolean, propagate?: boolean) => {
@@ -62,6 +71,8 @@ const CheckableAccordionItem = React.forwardRef<
     if (onClick) onClick(`${data.children![index].key}`);
     // onClick(allCheck);
   };
+
+  if (hiddenMap[data.key!] === true) return <></>;
 
   return (
     <CheckableAccordion

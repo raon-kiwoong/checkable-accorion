@@ -6,8 +6,10 @@ import {
   Checkbox,
   Flex,
 } from '@chakra-ui/react';
+import { HiddenContext } from 'contexts/hidden-context/hidden-context';
 import React, {
   ReactNode,
+  useContext,
   useEffect,
   useImperativeHandle,
   useRef,
@@ -32,6 +34,8 @@ const CheckableAccordion = React.forwardRef<
   const ref = useRef<HTMLInputElement>(null);
   const isClick = useRef<boolean>(false);
 
+  const { hiddenMap } = useContext(HiddenContext);
+
   const checkedFn = (newValue: boolean) => {
     setDefaultChecked(newValue);
   };
@@ -50,37 +54,43 @@ const CheckableAccordion = React.forwardRef<
   }, [checked]);
 
   return (
-    <Accordion
-      allowMultiple
-      w={'100%'}
-      pr={2}
-      defaultIndex={data.children?.map((_, i) => i)}
-    >
-      <AccordionItem key={data.key}>
-        <Flex flexDir={'row'} w="full">
-          <Checkbox
-            ref={ref}
-            borderColor={checkboxBorderColor || 'gray.400'}
-            onChange={() => {
-              // onChange 이벤트는 바뀔 떄가 아니라 클릭할때로 보여짐.
-              isClick.current = true;
-              setDefaultChecked(!defaultChecked);
-            }}
-            isChecked={defaultChecked}
-            float={'left'}
-            mr={4}
-          ></Checkbox>
-          <AccordionButton display="flex" flex={1} px={0}>
-            <Flex flex={1} justifyContent="flex-start">
-              {data.text}
+    <>
+      {hiddenMap[data.key!] === true ? (
+        <></>
+      ) : (
+        <Accordion
+          allowMultiple
+          w={'100%'}
+          pr={2}
+          defaultIndex={data.children?.map((_, i) => i)}
+        >
+          <AccordionItem key={data.key}>
+            <Flex flexDir={'row'} w="full">
+              <Checkbox
+                ref={ref}
+                borderColor={checkboxBorderColor || 'gray.400'}
+                onChange={() => {
+                  // onChange 이벤트는 바뀔 떄가 아니라 클릭할때로 보여짐.
+                  isClick.current = true;
+                  setDefaultChecked(!defaultChecked);
+                }}
+                isChecked={defaultChecked}
+                float={'left'}
+                mr={4}
+              ></Checkbox>
+              <AccordionButton display="flex" flex={1} px={0}>
+                <Flex flex={1} justifyContent="flex-start">
+                  {data.text}
+                </Flex>
+              </AccordionButton>
             </Flex>
-          </AccordionButton>
-        </Flex>
-        <AccordionPanel mr={0} pr={0}>
-          {children}
-        </AccordionPanel>
-      </AccordionItem>
-    </Accordion>
+            <AccordionPanel mr={0} pr={0}>
+              {children}
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
+      )}
+    </>
   );
 });
 
