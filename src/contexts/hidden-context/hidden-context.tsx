@@ -19,7 +19,6 @@ const HiddenProvider = ({
     [key: string]: boolean;
   }>({});
 
-  console.log('>>', $hiddenMap);
   useEffect(() => {
     setHiddenMap(hiddenMap);
   }, [hiddenMap]);
