@@ -4,7 +4,7 @@
 
 If you want an accordion menu can be checked, this package will be useful.
 
-<img src="https://raondata.s3.ap-northeast-2.amazonaws.com/demo.gif" width="10%" height="auto" />
+<img src="https://raondata.s3.ap-northeast-2.amazonaws.com/demo.gif" width="100%" height="auto" />
 
 ## environment
 
