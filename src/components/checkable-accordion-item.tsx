@@ -5,19 +5,20 @@ import { Box } from '@chakra-ui/react';
 import CheckableAccordionLeafItem from './checkable-accordion-leaf-item';
 import CheckableAccordionItemHandleType from 'types/checkable-accordion-item-handle-type';
 import CheckableAccordionPropsType from 'types/checkable-accordion-props-type';
+import CheckableAccordionHandleType from 'types/checkable-accordion-handle-type';
 
 const CheckableAccordionItem = React.forwardRef<
   CheckableAccordionItemHandleType,
   CheckableAccordionPropsType
 >(({ data, onCheck, onClick }, parentRef) => {
   const [isChecked, setChecked] = useState<boolean>(false);
-
+  const checkAccordionRef = useRef<CheckableAccordionHandleType>(null);
   const checkListRef = useRef<CheckableAccordionItemHandleType[]>([]);
 
   useImperativeHandle(parentRef, () => ({
     setChecked: (newVal: boolean, propagate?: boolean) => {
       if (propagate === true) {
-        checkListRef.current.map((v) => v.setChecked(false, true));
+        checkListRef.current.map((v) => v.setChecked(newVal, true));
       }
       setChecked(newVal);
     },
@@ -64,6 +65,7 @@ const CheckableAccordionItem = React.forwardRef<
 
   return (
     <CheckableAccordion
+      ref={checkAccordionRef}
       key={data.key}
       data={data}
       checked={isChecked}

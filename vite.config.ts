@@ -16,7 +16,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react'],
+      external: ['react', '@chakra-ui/react'],
       output: {
         globals: {
           react: 'React',

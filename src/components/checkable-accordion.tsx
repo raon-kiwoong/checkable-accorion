@@ -13,11 +13,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import CheckableAccordionHandleType from 'types/checkable-accordion-handle-type';
 import CheckableAccordionItemType from 'types/checkable-accordion-item-type';
-
-type CheckableAccordionHandleType = {
-  checked: (value: boolean) => void;
-};
 
 const CheckableAccordion = React.forwardRef<
   CheckableAccordionHandleType,
@@ -32,7 +29,6 @@ const CheckableAccordion = React.forwardRef<
   const [defaultChecked, setDefaultChecked] = useState<boolean>(
     checked || false
   );
-
   const ref = useRef<HTMLInputElement>(null);
   const isClick = useRef<boolean>(false);
 
@@ -64,7 +60,7 @@ const CheckableAccordion = React.forwardRef<
         <Flex flexDir={'row'} w="full">
           <Checkbox
             ref={ref}
-            borderColor={checkboxBorderColor}
+            borderColor={checkboxBorderColor || 'gray.400'}
             onChange={() => {
               // onChange 이벤트는 바뀔 떄가 아니라 클릭할때로 보여짐.
               isClick.current = true;

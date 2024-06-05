@@ -1,8 +1,6 @@
 import React, { ReactNode } from 'react';
+import CheckableAccordionHandleType from 'types/checkable-accordion-handle-type';
 import CheckableAccordionItemType from 'types/checkable-accordion-item-type';
-type CheckableAccordionHandleType = {
-    checked: (value: boolean) => void;
-};
 declare const CheckableAccordion: React.ForwardRefExoticComponent<{
     data: CheckableAccordionItemType;
     checkboxBorderColor?: string | undefined;
