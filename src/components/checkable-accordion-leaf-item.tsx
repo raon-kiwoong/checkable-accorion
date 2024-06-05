@@ -22,7 +22,6 @@ const CheckableAccordionLeafItem = React.forwardRef<
   const [isChecked, setChecked] = useState<boolean>(false);
   const { hiddenMap } = useContext(HiddenContext);
 
-  console.log('#', hiddenMap);
   useImperativeHandle(parentRef, () => ({
     setChecked: (newVal: boolean) => {
       setChecked(newVal);
