@@ -2,7 +2,7 @@ import React, {
   useContext,
   useEffect,
   useImperativeHandle,
-  useRef,
+  // useRef,
   useState,
 } from 'react';
 import CheckableAccordionItemType from 'types/checkable-accordion-item-type';
@@ -18,7 +18,7 @@ const CheckableAccordionLeafItem = React.forwardRef<
     // onChange: (value: boolean) => void;
   }
 >(({ data, onCheck }, parentRef) => {
-  const checkedRef = useRef<boolean>(false);
+  // const checkedRef = useRef<boolean>(false);
   const [isChecked, setChecked] = useState<boolean>(false);
   const { hiddenMap, checkedMap } = useContext(CheckableContext);
 
@@ -49,7 +49,7 @@ const CheckableAccordionLeafItem = React.forwardRef<
         mr={4}
         borderColor={'gray.400'}
         onChange={() => {
-          checkedRef.current = true;
+          // checkedRef.current = true;
           setChecked(!isChecked);
         }}
       ></Checkbox>

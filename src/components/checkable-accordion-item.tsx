@@ -60,20 +60,21 @@ const CheckableAccordionItem = React.forwardRef<
   useEffect(() => {
     const checked = checkedMap[`${data.key}`] || false;
     setChecked(checked);
+    if (checked) {
+      checkListRef.current.map((v) => v.setChecked(checked, true));
+    }
   }, [checkedMap]);
 
   const onCheckHandler = (newVal: boolean, index: number) => {
     let allCheck = newVal;
-    // console.log('--> onClickHandler: ', data.nm);
     checkListRef.current.forEach((v, ii) => {
       const curVal = ii === index ? newVal : v.isChecked();
-      // console.log('-', curVal);
 
       allCheck = curVal && allCheck;
     });
 
     setChecked(allCheck);
-    // if (onClick) onClick(`${data.children![index].key}`);
+    if (onClick) onClick(`${data.children![index].key}`);
     // onClick(allCheck);
   };
 
