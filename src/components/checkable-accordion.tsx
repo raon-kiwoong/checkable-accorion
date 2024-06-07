@@ -6,7 +6,7 @@ import {
   Checkbox,
   Flex,
 } from '@chakra-ui/react';
-import { HiddenContext } from 'contexts/hidden-context/hidden-context';
+import { CheckableContext } from 'contexts/checkable-context/checkable-context';
 import React, {
   ReactNode,
   useContext,
@@ -34,7 +34,7 @@ const CheckableAccordion = React.forwardRef<
   const ref = useRef<HTMLInputElement>(null);
   const isClick = useRef<boolean>(false);
 
-  const { hiddenMap } = useContext(HiddenContext);
+  const { hiddenMap } = useContext(CheckableContext);
 
   const checkedFn = (newValue: boolean) => {
     setDefaultChecked(newValue);

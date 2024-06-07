@@ -12,7 +12,7 @@ import CheckableAccordionLeafItem from './checkable-accordion-leaf-item';
 import CheckableAccordionItemHandleType from 'types/checkable-accordion-item-handle-type';
 import CheckableAccordionPropsType from 'types/checkable-accordion-props-type';
 import CheckableAccordionHandleType from 'types/checkable-accordion-handle-type';
-import { HiddenContext } from 'contexts/hidden-context/hidden-context';
+import { CheckableContext } from 'contexts/checkable-context/checkable-context';
 
 const CheckableAccordionItem = React.forwardRef<
   CheckableAccordionItemHandleType,
@@ -22,7 +22,7 @@ const CheckableAccordionItem = React.forwardRef<
   const checkAccordionRef = useRef<CheckableAccordionHandleType>(null);
   const checkListRef = useRef<CheckableAccordionItemHandleType[]>([]);
 
-  const { hiddenMap } = useContext(HiddenContext);
+  const { hiddenMap, checkedMap } = useContext(CheckableContext);
 
   useImperativeHandle(parentRef, () => ({
     setChecked: (newVal: boolean, propagate?: boolean) => {
@@ -57,6 +57,11 @@ const CheckableAccordionItem = React.forwardRef<
     onClick!(`${data.key}`);
   }, [isChecked]);
 
+  useEffect(() => {
+    const checked = checkedMap[`${data.key}`] || false;
+    setChecked(checked);
+  }, [checkedMap]);
+
   const onCheckHandler = (newVal: boolean, index: number) => {
     let allCheck = newVal;
     // console.log('--> onClickHandler: ', data.nm);
@@ -68,7 +73,7 @@ const CheckableAccordionItem = React.forwardRef<
     });
 
     setChecked(allCheck);
-    if (onClick) onClick(`${data.children![index].key}`);
+    // if (onClick) onClick(`${data.children![index].key}`);
     // onClick(allCheck);
   };
 

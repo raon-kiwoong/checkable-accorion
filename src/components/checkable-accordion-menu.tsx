@@ -3,12 +3,13 @@ import CheckableAccordionItemType from 'types/checkable-accordion-item-type';
 import CheckableAccordionItem from './checkable-accordion-item';
 import CheckableAccordionItemHandleType from 'types/checkable-accordion-item-handle-type';
 import _ from 'lodash';
-import { HiddenProvider } from 'contexts/hidden-context/hidden-context';
+import { CheckableProvider } from 'contexts/checkable-context/checkable-context';
 
 const CheckableAccordionMenu = ({
   data,
   onChange,
   hidden,
+  defaultChecked,
 }: {
   data: CheckableAccordionItemType;
   hidden?: string[];
@@ -16,11 +17,13 @@ const CheckableAccordionMenu = ({
     removal: CheckableAccordionItemType[],
     changed: CheckableAccordionItemType[]
   ) => void;
+  defaultChecked?: string[];
 }) => {
   const ref = useRef<CheckableAccordionItemHandleType>(null);
   const prev = useRef<CheckableAccordionItemType[]>([]);
 
   const [hiddenMap, setHiddenMap] = useState<{ [key: string]: boolean }>({});
+  const [checkedMap, setCheckedMap] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     const $hiddenMap: { [key: string]: boolean } = {};
@@ -31,8 +34,18 @@ const CheckableAccordionMenu = ({
     setHiddenMap($hiddenMap);
   }, [hidden]);
 
+  useEffect(() => {
+    const $checkedMap: { [key: string]: boolean } = {};
+
+    (defaultChecked || []).map((d) => {
+      $checkedMap[d] = true;
+    });
+
+    setCheckedMap($checkedMap);
+  }, [defaultChecked]);
+
   return (
-    <HiddenProvider hiddenMap={hiddenMap}>
+    <CheckableProvider hiddenMap={hiddenMap} checkedMap={checkedMap}>
       <CheckableAccordionItem
         ref={ref}
         data={data}
@@ -59,7 +72,7 @@ const CheckableAccordionMenu = ({
           }
         }}
       ></CheckableAccordionItem>
-    </HiddenProvider>
+    </CheckableProvider>
   );
 };
 

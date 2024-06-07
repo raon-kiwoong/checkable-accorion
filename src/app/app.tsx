@@ -35,7 +35,7 @@ function App() {
               data={t}
               key={t.key}
               onChange={() => {}}
-              hidden={['002']}
+              defaultChecked={['006']}
             ></CheckableAccordionMenu>
           );
         })}

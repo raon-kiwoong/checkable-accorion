@@ -2,20 +2,28 @@ import { ReactNode, createContext, useEffect, useState } from 'react';
 
 type HiddeonContextType = {
   hiddenMap: { [key: string]: boolean };
+  checkedMap: { [key: string]: boolean };
 };
 
-const HiddenContext = createContext<HiddeonContextType>({
+const CheckableContext = createContext<HiddeonContextType>({
   hiddenMap: {},
+  checkedMap: {},
 });
 
-const HiddenProvider = ({
+const CheckableProvider = ({
   children,
   hiddenMap,
+  checkedMap,
 }: {
   children: ReactNode;
   hiddenMap: { [key: string]: boolean };
+  checkedMap: { [key: string]: boolean };
 }) => {
   const [$hiddenMap, setHiddenMap] = useState<{
+    [key: string]: boolean;
+  }>({});
+
+  const [$checkedMap, setCheckedMap] = useState<{
     [key: string]: boolean;
   }>({});
 
@@ -23,15 +31,20 @@ const HiddenProvider = ({
     setHiddenMap(hiddenMap);
   }, [hiddenMap]);
 
+  useEffect(() => {
+    setCheckedMap(checkedMap);
+  }, [checkedMap]);
+
   return (
-    <HiddenContext.Provider
+    <CheckableContext.Provider
       value={{
         hiddenMap: $hiddenMap,
+        checkedMap: $checkedMap,
       }}
     >
       {children}
-    </HiddenContext.Provider>
+    </CheckableContext.Provider>
   );
 };
 
-export { HiddenContext, HiddenProvider };
+export { CheckableContext, CheckableProvider };

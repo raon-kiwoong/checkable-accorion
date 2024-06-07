@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/kiwoongkim/.nvm/versions/node/v20.5.0/bin/node /Users/kiwoongkim/.nvm/versions/node/v20.5.0/bin/yarn publish
+  /Users/kiwoongkim/.nvm/versions/node/v20.5.0/bin/node /Users/kiwoongkim/.nvm/versions/node/v20.5.0/bin/yarn publish --access public
 
 PATH: 
   /opt/homebrew/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/kiwoongkim/.nvm/versions/node/v20.5.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -29,7 +29,7 @@ Trace:
 npm manifest: 
   {
     "name": "@raondata/react-checkable-accordion",
-    "version": "0.0.1",
+    "version": "0.2.3",
     "description": "",
     "homepage": "https://github.com/raon-kiwoong/checkable-accorion.git",
     "repository": "https://github.com/raon-kiwoong/checkable-accorion.git",
@@ -73,11 +73,10 @@ npm manifest:
       "vite-plugin-dts": "^3.9.1"
     },
     "files": [
-      "src/components",
-      "src/types",
-      "src/index.ts"
+      "dist/*"
     ],
     "devDependencies": {
+      "@chakra-ui/react": "^2.8.2",
       "@commitlint/cli": "17.4.2",
       "@commitlint/config-conventional": "^19.2.2",
       "@tailwindcss/forms": "0.5.3",
@@ -106,7 +105,8 @@ npm manifest:
       "vite-preset-react": "2.3.0",
       "vitest": "^0.34.5"
     },
-    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "module": "dist/index.mjs",
     "main": "dist/index.js",
     "private": false
   }
