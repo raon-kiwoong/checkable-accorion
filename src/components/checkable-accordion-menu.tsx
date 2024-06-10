@@ -4,12 +4,17 @@ import CheckableAccordionItem from './checkable-accordion-item';
 import CheckableAccordionItemHandleType from 'types/checkable-accordion-item-handle-type';
 import _ from 'lodash';
 import { CheckableProvider } from 'contexts/checkable-context/checkable-context';
+import CheckableAccordionRoot from './checkable-accordion-root';
+
+import * as CSS from 'csstype';
+import { ResponsiveValue } from '@chakra-ui/react';
 
 const CheckableAccordionMenu = ({
   data,
   onChange,
   hidden,
   defaultChecked,
+  rootBackground,
 }: {
   data: CheckableAccordionItemType;
   hidden?: string[];
@@ -18,6 +23,7 @@ const CheckableAccordionMenu = ({
     changed: CheckableAccordionItemType[]
   ) => void;
   defaultChecked?: string[];
+  rootBackground?: ResponsiveValue<CSS.Property.Color> | undefined;
 }) => {
   const ref = useRef<CheckableAccordionItemHandleType>(null);
   const prev = useRef<CheckableAccordionItemType[]>([]);
@@ -46,9 +52,10 @@ const CheckableAccordionMenu = ({
 
   return (
     <CheckableProvider hiddenMap={hiddenMap} checkedMap={checkedMap}>
-      <CheckableAccordionItem
+      <CheckableAccordionRoot
         ref={ref}
         data={data}
+        rootBackground={rootBackground}
         onCheck={() => {}}
         onClick={() => {
           if (ref.current?.getCheckedList) {
@@ -71,7 +78,7 @@ const CheckableAccordionMenu = ({
             }
           }
         }}
-      ></CheckableAccordionItem>
+      ></CheckableAccordionRoot>
     </CheckableProvider>
   );
 };
